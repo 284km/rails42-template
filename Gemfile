@@ -55,9 +55,9 @@ gem 'kaminari'
 # gem 'kaminari-bootstrap'
 
 # Authentication
-# gem 'devise'
+gem 'devise'
 # gem 'omniauth'
-# gem 'omniauth-twitter'
+gem 'omniauth-twitter'
 # gem 'omniauth-github'
 # gem 'omniauth-facebook'
 
