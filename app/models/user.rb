@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:twitter]
 
-  validates :name, presence: true, uniqueness: true
+  # validates :name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
 
   def self.from_omniauth(auth)
@@ -43,6 +43,17 @@ class User < ActiveRecord::Base
   # passwordは要求しないようにする。
   def password_required?
     super && provider.blank?
+  end
+
+  # プロフィールを変更するときによばれる
+  def update_with_password(params, *options)
+    # パスワードが空の場合
+    if encrypted_password.blank?
+      # パスワードがなくても更新できる
+      update_attributes(params, *options)
+    else
+      super
+    end
   end
 
 end
