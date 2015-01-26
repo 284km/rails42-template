@@ -60,6 +60,10 @@ gem 'devise'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 # gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
+# gem 'omniauth-hatena'
+# gem 'omniauth-linkedin'
+# gem 'omniauth-mixi'
 
 # APIs
 # gem 'bugsnag'
