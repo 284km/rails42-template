@@ -58,8 +58,8 @@ gem 'kaminari'
 gem 'devise'
 # gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 # gem 'omniauth-github'
-# gem 'omniauth-facebook'
 
 # APIs
 # gem 'bugsnag'
