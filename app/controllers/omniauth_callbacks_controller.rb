@@ -21,4 +21,5 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # 例えば、Facebookに対応する場合、alias_method :facebook, :allだけですみます
   alias_method :twitter, :all
   alias_method :facebook, :all
+  alias_method :google_oauth2, :all
 end
