@@ -16,7 +16,14 @@ class User < ActiveRecord::Base
       # auth.uidには twitterアカウントに基づいた個別のIDが入っている
       # first_or_createメソッドが自動でproviderとuidを設定してくれるので、
       # ここでは設定は必要ない
-      user.name = auth.info.nickname # twitterで利用している名前が入る
+      
+      if auth.provider == "google_oauth2"
+        # google
+        user.name = auth.info.name
+      else
+        # twitter, facebook
+        user.name = auth.info.nickname
+      end
       user.email = auth.info.email # twitterの場合入らない
     end
   end
