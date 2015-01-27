@@ -235,7 +235,7 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :twitter, Rails.application.secrets.twitter_api_key, Rails.application.secrets.twitter_api_secret
   config.omniauth :facebook, Rails.application.secrets.facebook_api_key, Rails.application.secrets.facebook_api_secret
-  config.omniauth :google, Rails.application.secrets.google_api_key, Rails.application.secrets.google_api_secret
+  config.omniauth :google_oauth2, Rails.application.secrets.google_api_key, Rails.application.secrets.google_api_secret
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
