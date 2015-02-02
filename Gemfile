@@ -17,6 +17,14 @@ gem 'sqlite3'
 # group :production, :staging do
 #   gem 'rails_12factor'
 #   gem 'newrelic_rpm'
+#
+#   # Profile
+#   gem 'newrelic_rpm'
+#
+#   # memcache
+#   gem 'memcachier'
+#   gem 'dalli'
+#
 # end
 
 
@@ -35,6 +43,9 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+# group :doc do
+#   gem 'sdoc', require: false
+# end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -45,8 +56,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# gem 'bootstrap-sass'
 gem 'compass-rails'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 # gem 'haml-rails'
 gem 'slim-rails'
 # gem 'simple_form'
@@ -70,14 +82,28 @@ gem 'omniauth-google-oauth2'
 
 # Helpers
 # gem 'active_decorator'
+# gem 'draper'
+# gem 'auto_html', '~> 1.6.0', github: 'arehberg/auto_html'
+# gem 'dekiru'
+# gem 'rinku'
+# gem 'redcarpet', '~> 3.1', github: 'vmg/redcarpet'
+# gem 'rouge'
+# gem 'gemoji'
 
 # Models
 # gem 'figaro'
 # gem 'enumerize'
-# gem 'validates_email_format_of'
+gem 'validates_email_format_of'
 # gem 'unf'
 # gem 'fog'
 # gem 'mini_magick'
+# gem 'carrierwave'
+# gem 'refile'
+# gem 'default_value_for'
+# gem 'uuidtools'
+# gem 'active_hash'
+
+
 
 # Server
 # gem 'puma'
@@ -90,11 +116,15 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+#   gem 'spring-commands-rspec'
 
+#   gem 'rspec', '~> 3.0'
   gem 'rspec-rails'
+#   gem 'factory_girl'
   gem 'factory_girl_rails'
+#   gem 'faker'
   gem 'pry-byebug'
-  gem "pry-stack_explorer"
+  gem 'pry-stack_explorer'
 
   gem "capybara"
   gem "selenium-webdriver"
@@ -102,6 +132,19 @@ group :development, :test do
   gem "shoulda-matchers"
 
   gem "teaspoon"
+
+#   # TDD
+#   gem 'brakeman'
+#   gem 'delorean'
+#   gem 'guard-rspec', require: false
+#   gem 'json_expressions'
+#   gem 'launchy'
+#   gem 'poltergeist'
+#   gem 'rails-db-resetup'
+#   gem 'rb-fsevent', require: RUBY_PLATFORM.downcase =~ /darwin/ ? 'rb-fsevent' : false
+#   gem 'minitest'
+#   gem 'json_spec'
+
 end
 
 group :development do
@@ -131,6 +174,17 @@ group :development do
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 
   gem 'rack-mini-profiler'
+
+  # Debugs
+#   gem 'bullet'
+#   gem 'hirb'
+#   gem 'hirb-unicode'
+#   gem 'letter_opener'
+#   gem 'tapp'
+#   gem 'view_source_map'
+#   gem 'i18n-tasks'
+#   gem 'thin'
+
 end
 
 group :test do
@@ -156,8 +210,65 @@ end
 # gem "resque"
 # gem "weak_parameters"
 
-
 # -------------------------------------------------------------------------
+
+# APIs
+# gem 'twitter', '>= 5.11.0'
+# gem 'airbrake'
+# gem 'hipchat'
+# gem 'idobata'
+# gem 'grape'
+# gem 'pusher'
+# gem 'em-http-request'
+# gem 'garb'
+# gem 'webpay'
+
+# # Assets
+# gem 'sass', '~> 3.2.0'
+# gem 'inuicon-rails', '~> 0.0.7'
+# gem 'asset_sync'
+
+# # Server
+# gem 'puma'
+# gem 'utf8-cleaner'
+
+# # Views
+# gem 'bootstrap-sass'
+# gem 'compass-rails'
+# gem 'animation'
+# gem 'font-awesome-rails'
+# gem 'jquery-rails', '>= 3.1.2'
+# gem 'jquery-ui-rails'
+# gem 'jquery-cookie-rails'
+# gem 'jquery-turbolinks'
+# gem 'turbolinks'
+# gem 'simple_form'
+# gem 'yajl-ruby'
+
+# # Javascript
+# gem 'underscore-rails'
+# gem 'pjax_rails'
+
+# # background
+# gem 'sidekiq'
+# gem 'sinatra', require: false
+# gem 'slim'
+
+# # iOS Push Notification
+# gem 'houston'
+
+# # Google Cloud Messaging for Android
+# gem 'gcm'
+
+# # Performance
+# gem 'peek'
+# gem 'peek-git'
+# gem 'peek-pg'
+# gem 'peek-redis'
+# gem 'peek-dalli'
+# gem 'peek-performance_bar'
+# gem 'peek-rblineprof'
+
 
 # group :development do
 #   # Debugs
@@ -165,7 +276,6 @@ end
 #   gem 'awesome_print'
 #   gem 'better_errors'
 #   gem 'binding_of_caller'
-#   gem 'bullet'
 #   gem 'hirb'
 #   gem 'hirb-unicode'
 #   gem 'letter_opener'
@@ -174,39 +284,48 @@ end
 #   gem 'pry-rails'
 #   gem 'pry-stack_explorer'
 #   gem 'quiet_assets'
+#   gem 'rack-mini-profiler'
 #   gem 'tapp'
 #   gem 'view_source_map'
 #   gem 'i18n-tasks'
 #   gem 'thin'
+#   gem 'rubocop'
+#   gem 'rails-erd', github: 'paulwittmann/rails-erd', branch: 'mavericks'
 # end
 # 
 # group :test, :development do
 #   # TDD
 #   gem 'brakeman'
 #   gem 'capybara'
-#   gem 'database_cleaner'
+#   gem 'database_rewinder'
 #   gem 'delorean'
 #   gem 'factory_girl'
 #   gem 'factory_girl_rails'
 #   gem 'faker'
 #   gem 'guard-rspec', require: false
-#   gem 'json_expressions'
+#   gem 'guard-sprockets2'
 #   gem 'launchy'
+#   gem 'nokogiri'
 #   gem 'poltergeist'
 #   gem 'rails-db-resetup'
 #   gem 'rb-fsevent', require: RUBY_PLATFORM.downcase =~ /darwin/ ? 'rb-fsevent' : false
 #   gem 'rspec', '~> 3.0'
 #   gem 'rspec-rails', '~> 3.1'
 #   gem 'minitest'
-#   gem 'shoulda-matchers', '2.5.0'
+#   gem 'shoulda-matchers'
 #   gem 'spring'
 #   gem 'spring-commands-rspec'
+#   gem 'transpec'
+# end
+# 
+# group :test do
+#   gem 'rspec-sidekiq', github: 'yelled3/rspec-sidekiq', branch: 'rspec3-beta'
 #   gem 'json_spec'
+#   gem 'vcr'
+#   gem 'webmock'
 # end
 
-
-
-
+# -------------------------------------------------------------------------
 
 
 # Put Gemfile.local to use arbitrary gems for your use case.
