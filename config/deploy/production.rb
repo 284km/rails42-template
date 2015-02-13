@@ -15,8 +15,14 @@ role :db,  %w{deploy@example.com}
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
+# server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
+server 'default', user: 'vagrant', roles: %w{web app}, my_property: :my_value
 
+# server '127.0.0.1', port: 2222, user: 'vagrant', roles: %w{web, app, db}, ssh_options: {
+#   user: 'vagrant',
+#   keys: %w(~/.vagrant.d/insecure_private_key),
+#   auth_methods: %w(publickey)
+# }
 
 # Custom SSH Options
 # ==================
