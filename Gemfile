@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
 # なんかだめなとき
-ENV['NOKOGIRI_USE_SYSTEM_LIBRARIES'] = 'YES'
-gem 'rb-readline'
+# ENV['NOKOGIRI_USE_SYSTEM_LIBRARIES'] = 'YES'
+# gem 'rb-readline'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
