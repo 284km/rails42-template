@@ -53,8 +53,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 # gem 'unicorn'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# Capistrano
+# gem 'whenever', require: false # cronを使う場合のみ
+group :deployment do
+  gem 'capistrano', '~> 3.2.1'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv' # rbenv の場合
+  # gem 'rvm1-capistrano3', require: false # rvm の場合
+  gem 'capistrano-bundler'
+  gem 'capistrano3-unicorn' # unicornを使っている場合のみ
+end
 
 # gem 'bootstrap-sass'
 gem 'compass-rails'
