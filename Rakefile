@@ -30,7 +30,6 @@ namespace :unicorn do
     sh "pstree '#{unicorn_pid}'"
   end
 
-  ##
   # Helpers
 
   def unicorn_signal signal
@@ -49,5 +48,4 @@ namespace :unicorn do
     require "pathname"
     Pathname.new(__FILE__) + "../"
   end
-
 end
