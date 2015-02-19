@@ -63,14 +63,37 @@ set :bundle_jobs, 4
 
 namespace :deploy do
 
+  # desc 'Upload database.yml'
+  # task :upload do
+  #   on roles(:app) do |host|
+  #     if test "[ ! -d #{shared_path}/config ]"
+  #       execute "mkdir -p #{shared_path}/config"
+  #     end
+  #     upload!('config/database.yml', "#{shared_path}/config/database.yml")
+  #   end
+  # end
+
+  # desc 'Create Database'
+  # task :db_create do
+  #   on roles(:db) do |host|
+  #     with rails_env: fetch(:rails_env) do
+  #       within current_path do
+  #         execute :bundle, :exec, :rake, 'db:create'
+  #       end
+  #     end
+  #   end
+  # end
+
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
       # Your restart mechanism here, for example:
       # execute :touch, release_path.join('tmp/restart.txt')
+      invoke 'unicorn:restart'
     end
   end
 
+  # before :starting, :upload
   after :publishing, :restart
 
   after :restart, :clear_cache do
@@ -83,3 +106,17 @@ namespace :deploy do
   end
 
 end
+
+namespace :config do
+  task :setup do
+    on roles(:app) do |host|
+      execute :mkdir, "-p", "#{shared_path}/config"
+      upload! "config/database.yml", "#{shared_path}/config/database.yml"
+      # upload! "config/settings.yml", "#{shared_path}/config/settings.yml"
+      upload! "config/secrets.yml", "#{shared_path}/config/secrets.yml"
+    end
+  end
+end
+
+
+
