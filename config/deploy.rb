@@ -5,37 +5,41 @@ set :application, 'my_app_name'
 # set :repo_url, 'https://github.com/284km/rails42-template.git'
 set :repo_url, 'git@github.com:284km/rails42-template.git'
 
-# Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
+set :branch, 'master'          # Default branch is :master
 
-set :deploy_to, '/var/www/app' # Default deploy_to directory is /var/www/my_app
-set :scm, :git                 # Default value for :scm is :git
-
-# Default value for :format is :pretty
-# set :format, :pretty
-
-# Default value for :log_level is :debug
-# set :log_level, :debug
+set :deploy_to, '/var/www/my_app' # Default deploy_to directory is /var/www/my_app
+set :scm, :git                    # Default value for :scm is :git
+set :format, :pretty              # Default value for :format is :pretty
+set :log_level, :debug            # Default value for :log_level is :debug
+# set :log_level, :info             # Default value for :log_level is :debug
+# set :user, "vagrant"
 
 # Default value for :pty is false
+# sudoに必要 これをtrueにするとssh -tで実行される
 # set :pty, true
 
 # Default value for :linked_files is []
+# /shared/config/database.yml から /current/config/database.yml にシンボリックリンクを貼ってくれる
 # set :linked_files, %w{config/database.yml}
+set :linked_files, %w{config/database.yml config/secrets.yml}
+# set :linked_files, %w{config/database.yml config/resque.yml config/settings.yml config/secrets.yml}
 
 # Default value for linked_dirs is []
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w{bin log tmp/backup tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+# set :linked_dirs, %w{log contrib tmp/pids tmp/cache tmp/sockets public/system public/videos node_modules bower_components}
 
 # Default value for default_env is {}
+# capistrano 用 bundle するのに必要
+# set :default_env, { path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" }
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
-# Default value for keep_releases is 5
-set :keep_releases, 5
-
+set :keep_releases, 5 # Default value for keep_releases is 5
 
 
 # rbenv
-set :rbenv_type, :system # :system or :user
+set :rbenv_type, :user   # or :system, depends on your rbenv setup
 set :rbenv_ruby, '2.1.2'
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 set :rbenv_map_bins, %w{rake gem bundle ruby rails}
@@ -44,10 +48,10 @@ set :rbenv_roles, :all # default value
 # set :rvm_type, :system
 # set :rvm1_ruby_version, '2.1.2'
 
-set :linked_dirs, %w{bin log tmp/backup tmp/pids tmp/cache tmp/sockets vendor/bundle}
 # set :unicorn_pid, "#{shared_path}/tmp/pids/unicorn.pid"
 
 set :bundle_jobs, 4
+
 # set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 
 # after 'deploy:publishing', 'deploy:restart'

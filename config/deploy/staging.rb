@@ -1,3 +1,6 @@
+set :stage, :staging
+set :rails_env, 'staging' 
+
 # Simple Role Syntax
 # ==================
 # Supports bulk-adding hosts to roles, the primary server in each group
@@ -18,9 +21,12 @@ role :db,  %w{vagrant@default}
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-# server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
+# server '127.0.0.1', port: 2222, user: 'vagrant', roles: %w{web app db}, ssh_options: {
+#   keys: %w(~/.vagrant.d/insecure_private_key),
+#   forward_agent: true,
+#   auth_methods: %w(publickey)
+# }
 server 'default', user: 'vagrant', roles: %w{web app}, my_property: :my_value
-
 
 # staging
 # set :branch, 'master'
