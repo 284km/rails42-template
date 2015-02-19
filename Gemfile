@@ -56,7 +56,7 @@ gem 'unicorn'
 # Capistrano
 # gem 'whenever', require: false # cronを使う場合のみ
 group :deployment do
-  gem 'capistrano', '~> 3.2.1'
+  gem 'capistrano'
   gem 'capistrano-rails'
   gem 'capistrano-rbenv' # rbenv の場合
   # gem 'rvm1-capistrano3', require: false # rvm の場合
