@@ -111,7 +111,7 @@ gem 'validates_email_format_of'
 # gem 'uuidtools'
 # gem 'active_hash'
 
-
+gem "non-stupid-digest-assets"
 
 # Server
 # gem 'puma'
