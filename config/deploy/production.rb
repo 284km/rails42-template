@@ -1,22 +1,15 @@
-# Simple Role Syntax
-# ==================
-# Supports bulk-adding hosts to roles, the primary server in each group
-# is considered to be the first unless any hosts have the primary
-# property set.  Don't declare `role :all`, it's a meta role.
+set :rails_env, 'production' 
 
-role :app, %w{deploy@example.com}
-role :web, %w{deploy@example.com}
-role :db,  %w{deploy@example.com}
+set :unicorn_pid, -> { File.join(shared_path, "tmp", "pids", "unicorn.pid") }
+set :unicorn_config_path, -> { File.join(current_path, "config", "unicorn.rb") }
+set :unicorn_rack_env, "production"
 
-
-# Extended Server Syntax
-# ======================
-# This can be used to drop a more detailed server definition into the
-# server list. The second argument is a, or duck-types, Hash and is
-# used to set extended properties on the server.
+role :app, %w{vagrant@default}
+role :web, %w{vagrant@default}
+role :db,  %w{vagrant@default}
 
 # server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
-server 'default', user: 'vagrant', roles: %w{web app}, my_property: :my_value
+server 'default', user: 'vagrant', roles: %w{web app db}, my_property: :my_value
 
 # server '127.0.0.1', port: 2222, user: 'vagrant', roles: %w{web, app, db}, ssh_options: {
 #   user: 'vagrant',
