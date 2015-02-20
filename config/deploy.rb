@@ -1,5 +1,5 @@
 # config valid only for Capistrano 3.1
-lock '3.2.1'
+# lock '3.2.1'
 
 set :application, 'my_app_name'
 # set :repo_url, 'https://github.com/284km/rails42-template.git'
@@ -31,7 +31,7 @@ set :linked_dirs, %w{bin log tmp/backup tmp/pids tmp/cache tmp/sockets vendor/bu
 # set :linked_dirs, %w{log contrib tmp/pids tmp/cache tmp/sockets public/system public/videos node_modules bower_components}
 
 # Default value for default_env is {}
-# capistrano 用 bundle するのに必要
+# rbenv では見てない模様。
 # set :default_env, { path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" }
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
@@ -39,7 +39,9 @@ set :keep_releases, 5 # Default value for keep_releases is 5
 
 
 # rbenv
-set :rbenv_type, :user   # or :system, depends on your rbenv setup
+# :user だと ~/.rbenv, :system だと /usr/local/rbenv を見る
+# set :rbenv_type, :user   # or :system, depends on your rbenv setup
+set :rbenv_type, :system   # or :system, depends on your rbenv setup
 set :rbenv_ruby, '2.1.2'
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 set :rbenv_map_bins, %w{rake gem bundle ruby rails}
