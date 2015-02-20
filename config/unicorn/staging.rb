@@ -1,4 +1,4 @@
-@app_path = File.expand_path('../../', __FILE__)
+@app_path = File.expand_path('../../../', __FILE__)
 # @tmp_path = "/tmp"
 @tmp_path = "#{@app_path}/tmp"
 
