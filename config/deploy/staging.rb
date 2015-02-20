@@ -1,5 +1,13 @@
-set :stage, :staging
+# set :stage, :staging
 set :rails_env, 'staging' 
+set :unicorn_rack_env, 'staging'
+
+# set :deploy_env, 'staging'
+# set :unicorn_env, 'staging'
+# set :rails_env, 'staging'
+# set :app_env, 'staging'
+# 
+# set :unicorn_rack_env, 'staging'
 
 # Simple Role Syntax
 # ==================
