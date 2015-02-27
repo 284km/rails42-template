@@ -116,6 +116,7 @@ namespace :config do
       upload! "config/database.yml", "#{shared_path}/config/database.yml"
       # upload! "config/settings.yml", "#{shared_path}/config/settings.yml"
       upload! "config/secrets.yml", "#{shared_path}/config/secrets.yml"
+      upload! ".env", "#{shared_path}/.env"
     end
   end
 end
