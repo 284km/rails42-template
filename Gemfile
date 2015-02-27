@@ -49,8 +49,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Unicorn as the app server
+# Server
 gem 'unicorn'
+# gem 'puma'
+# gem 'rack-rewrite'
 
 # Capistrano
 # gem 'whenever', require: false # cronを使う場合のみ
@@ -111,10 +113,7 @@ gem 'validates_email_format_of'
 # gem 'active_hash'
 
 gem "non-stupid-digest-assets"
-
-# Server
-# gem 'puma'
-# gem 'rack-rewrite'
+gem "dotenv-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
