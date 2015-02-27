@@ -71,6 +71,8 @@ gem 'font-awesome-rails'
 # gem 'haml-rails'
 gem 'slim-rails'
 # gem 'simple_form'
+gem "tapp"
+gem "chronic_duration"
 
 gem 'kaminari'
 # gem 'kaminari-bootstrap'
@@ -114,6 +116,11 @@ gem 'validates_email_format_of'
 
 gem "non-stupid-digest-assets"
 gem "dotenv-rails"
+# gem "eye"
+
+# gem "thor"
+# gem 'oj'
+# gem 'oj_mimic_json'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -158,10 +165,8 @@ group :development do
   gem 'pry-rails'
   gem 'pry-doc'
 
-  # print を見やすくするやつ
-  gem 'awesome_print'
-  # Source Map
-  gem 'coffee-rails-source-maps'
+  gem 'awesome_print' # print を見やすくするやつ
+  gem 'coffee-rails-source-maps' # Source Map
 
 #  rails 4 対応してない? bundle install でエラー出たからコメントアウト中
 #  gem 'sass-rails-source-maps'
@@ -211,7 +216,6 @@ end
 
 # gem "clockwork"
 # gem "foreman"
-# gem "puma"
 # gem "redis"
 # gem "resque"
 # gem "weak_parameters"
@@ -235,7 +239,6 @@ end
 # gem 'asset_sync'
 
 # # Server
-# gem 'puma'
 # gem 'utf8-cleaner'
 
 # # Views
@@ -248,6 +251,7 @@ end
 # gem 'jquery-cookie-rails'
 # gem 'jquery-turbolinks'
 # gem 'turbolinks'
+# gem "nprogress-rails" # turbolinks とセット
 # gem 'simple_form'
 # gem 'yajl-ruby'
 
