@@ -22,7 +22,7 @@ set :log_level, :debug            # Default value for :log_level is :debug
 # Default value for :linked_files is []
 # /shared/config/database.yml から /current/config/database.yml にシンボリックリンクを貼ってくれる
 # set :linked_files, %w{config/database.yml}
-set :linked_files, %w{config/database.yml config/secrets.yml}
+set :linked_files, %w{config/database.yml config/secrets.yml .env}
 # set :linked_files, %w{config/database.yml config/resque.yml config/settings.yml config/secrets.yml}
 
 # Default value for linked_dirs is []
