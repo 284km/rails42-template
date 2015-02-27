@@ -16,7 +16,6 @@ gem 'sqlite3'
 # gem 'pg', group: :production
 # group :production, :staging do
 #   gem 'rails_12factor'
-#   gem 'newrelic_rpm'
 #
 #   # Profile
 #   gem 'newrelic_rpm'
