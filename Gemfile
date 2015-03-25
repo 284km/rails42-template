@@ -182,7 +182,10 @@ group :development do
   # スキーマ情報がmodelファイルの中でわかるようにする。
   ### bundle install したら、
   ### bundle exec annotate する。
-  gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+  # gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+  gem "annotate"  # annotate && annotate --routes
+  # gem 'rails-erd', github: 'paulwittmann/rails-erd', branch: 'mavericks'
+  gem "rails-erd" # erd
 
   gem 'rack-mini-profiler'
 
@@ -300,7 +303,6 @@ end
 #   gem 'i18n-tasks'
 #   gem 'thin'
 #   gem 'rubocop'
-#   gem 'rails-erd', github: 'paulwittmann/rails-erd', branch: 'mavericks'
 # end
 # 
 # group :test, :development do
