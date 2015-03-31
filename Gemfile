@@ -135,7 +135,10 @@ group :development, :test do
   gem 'rspec-rails'
 #   gem 'factory_girl'
   gem 'factory_girl_rails'
+  # gem 'guard-rspec', require: false
 #   gem 'faker'
+#   gem 'faker-precure'
+#   gem 'gimei'
   gem 'pry-byebug'
   gem 'pry-stack_explorer'
 
@@ -149,7 +152,6 @@ group :development, :test do
 #   # TDD
 #   gem 'brakeman'
 #   gem 'delorean'
-#   gem 'guard-rspec', require: false
 #   gem 'json_expressions'
 #   gem 'launchy'
 #   gem 'poltergeist'
@@ -311,10 +313,6 @@ end
 #   gem 'capybara'
 #   gem 'database_rewinder'
 #   gem 'delorean'
-#   gem 'factory_girl'
-#   gem 'factory_girl_rails'
-#   gem 'faker'
-#   gem 'guard-rspec', require: false
 #   gem 'guard-sprockets2'
 #   gem 'launchy'
 #   gem 'nokogiri'
