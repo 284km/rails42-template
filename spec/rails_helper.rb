@@ -47,4 +47,11 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
+
+  # for Capybara
+  # config.include Capybara::DSL
+  # for Paperclip
+  # config.include Paperclip::Shoulda::Matchers
+  # for Deveise
+  # config.include RequestHelpers, :type => :request
 end
